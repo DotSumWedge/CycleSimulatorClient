@@ -4,11 +4,12 @@ import Button from './Button';
 
 const Header = ({title}) => {
   return(
-    <header className='header'>
+    <header className='header' style={headingStyle}>
       <h1>{title}</h1>
       <Button color='purple' text='Team' />
       <Button color='pink' text='Upcoming Races' />
       <Button color='brown' text='Results' />
+      <Button color='red' text='Art' />
     </header>
   )
 }
@@ -21,11 +22,11 @@ Header.propTypes = {
     title: PropTypes.string.isRequired,
 }
 
-//css in js
-// const headingStyle = {
-//     color: 'red',
-//     backgroundColor: 'black'
-// }
+const headingStyle = {
+    color: 'blue',
+    backgroundColor: 'black',
+    textAlign: 'center'
+}
 
 
 export default Header
