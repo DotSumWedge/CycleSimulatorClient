@@ -1,11 +1,12 @@
-import rider_card from './rider_card_images/Rider_Spear.jpg';
 import './App.css';
 import Header from './components/Header'
+import RiderCard from './components/RiderCard'
 
 function App() {
   return (
     <div className="container">
       <Header />
+      <RiderCard />
     </div>
   );
 }
