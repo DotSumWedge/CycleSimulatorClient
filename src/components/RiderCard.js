@@ -1,6 +1,4 @@
 import PropTypes from 'prop-types';
-import rider_image from '../rider_card_images/Rider_Spear.jpg';
-
 
 const RiderCard = ({riders}) => {
     const onClick = (e) => {
@@ -10,7 +8,25 @@ const RiderCard = ({riders}) => {
     return (
         <>
             {riders.map((riders) => (
-                <h3 key={riders.id}>{riders.name}</h3>
+                <div key={riders.id} style={RiderCardStyle}>
+                    <div>{riders.image}</div>
+                    <div style={RiderNameStyle}>{riders.name}</div>
+                    <div>
+                        <div style={gradientModifiers}>
+                            <div>{riders.flat}</div>
+                            <div>{riders.mountain}</div>
+                            <div>{riders.downhill}</div>
+                        </div>
+                        <div style={eventModifiers}>
+                            <div>{riders.sprint}</div>
+                            <div>{riders.breakaway}</div>
+                        </div>
+                        <div style={conditionModifiers}>
+                            <div>{riders.cobbleStone}</div>
+                            <div>{riders.wind}</div>
+                        </div>
+                    </div>
+                </div>
             ))}
             {/* onClick={onClick}
             style={RiderCardStyle}>
@@ -24,20 +40,6 @@ const RiderCard = ({riders}) => {
                 </div> */}
         </>
     )
-}
-
-RiderCard.defaultProps = {
-    riderData: [
-        'Joe Shmoh',
-        '10',
-        '10',
-        '10',
-        '10'
-    ],
-}
-
-RiderCard.propTypes = {
-    riderData: PropTypes.array,
 }
 
 const RiderCardStyle = {
@@ -57,6 +59,20 @@ const gradientModifiers = {
     display: 'grid',
     gridTemplateAreas:`
         'flat hill mountain downhill'`,
+    gridGap: '10px'
+}
+
+const eventModifiers = {
+    display: 'grid',
+    gridTemplateAreas:`
+        'sprint breakaway'`,
+    gridGap: '10px'
+}
+
+const conditionModifiers = {
+    display: 'grid',
+    gridTemplateAreas:`
+        'cobbleStone wind'`,
     gridGap: '10px'
 }
 
