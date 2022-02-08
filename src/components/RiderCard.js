@@ -11,9 +11,10 @@ const RiderCard = ({riders}) => {
                 <div key={riders.id} style={RiderCardStyle}>
                     <div>{riders.image}</div>
                     <div style={RiderNameStyle}>{riders.name}</div>
-                    <div>
+                    <div style={riderModifiers}>
                         <div style={gradientModifiers}>
                             <div>{riders.flat}</div>
+                            <div>{riders.hill}</div>
                             <div>{riders.mountain}</div>
                             <div>{riders.downhill}</div>
                         </div>
@@ -53,6 +54,12 @@ const RiderNameStyle = {
     textAlign: 'center',
     color: 'blue',
     fontSize: '30px'
+}
+
+const riderModifiers = {
+    textAlign: 'center',
+    color: 'red',
+    fontSize: '20px'
 }
 
 const gradientModifiers = {
