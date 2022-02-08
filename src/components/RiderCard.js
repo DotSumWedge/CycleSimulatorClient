@@ -29,16 +29,6 @@ const RiderCard = ({riders}) => {
                     </div>
                 </div>
             ))}
-            {/* onClick={onClick}
-            style={RiderCardStyle}>
-                <div><img src={rider_image} alt="Portrait of rider"/></div>
-                <div style={RiderNameStyle}>{riderData[0]}</div>
-                <div style={gradientModifiers}>
-                    <div>{}{riderData[1]}</div>
-                    <div>{riderData[2]}</div>
-                    <div>{riderData[3]}</div>
-                    <div>{riderData[4]}</div>
-                </div> */}
         </>
     )
 }
