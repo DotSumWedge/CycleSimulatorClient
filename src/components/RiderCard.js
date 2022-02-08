@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types';
 import rider_image from '../rider_card_images/Rider_Spear.jpg';
 
-const RiderCard = ({riderData}) => {
+
+const RiderCard = ({riders}) => {
     const onClick = (e) => {
         console.log(e)
     }
 
     return (
-        <div
-            onClick={onClick}
+        <>
+            {riders.map((riders) => (
+                <h3 key={riders.id}>{riders.name}</h3>
+            ))}
+            {/* onClick={onClick}
             style={RiderCardStyle}>
                 <div><img src={rider_image} alt="Portrait of rider"/></div>
                 <div style={RiderNameStyle}>{riderData[0]}</div>
@@ -17,8 +21,8 @@ const RiderCard = ({riderData}) => {
                     <div>{riderData[2]}</div>
                     <div>{riderData[3]}</div>
                     <div>{riderData[4]}</div>
-                </div>
-        </div>
+                </div> */}
+        </>
     )
 }
 
