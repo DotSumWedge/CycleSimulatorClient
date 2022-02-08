@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const RiderCard = ({riders}) => {
+const RiderCards = ({riders}) => {
     const onClick = (e) => {
         console.log(e)
     }
@@ -108,4 +108,4 @@ const conditionModifiers = {
 //     gridArea: wind,
 // }
 
-export default RiderCard
+export default RiderCards

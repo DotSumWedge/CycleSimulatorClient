@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header'
-import RiderCard from './components/RiderCard'
+import RiderCards from './components/RiderCards'
 import { useState} from 'react';
 import rider_image from './rider_card_images/Rider_Spear.jpg';
 
@@ -238,7 +238,7 @@ const App = () => {
       <Header />
       <div style={RiderCardsStyle}>
         <div style={RiderCardStyle}>
-          <RiderCard riders={riders}/>
+          <RiderCards riders={riders}/>
         </div>
       </div>
     </div>
