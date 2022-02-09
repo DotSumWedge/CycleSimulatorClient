@@ -1,6 +1,11 @@
 # CycleSimulatorClient
 Front end piece of a cycle simulation game using react
 
+# Useful links for getting started
+https://www.geeksforgeeks.org/installation-of-node-js-on-linux/#:~:text=1%20Open%20your%20terminal%20or%20press%20Ctrl%20%2B,the%20following%20command%3A%20node%20-v%20or%20node%20%E2%80%93version
+https://www.tecmint.com/install-reactjs-on-ubuntu/
+https://www.w3schools.com/react/react_getstarted.asp
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
