@@ -237,9 +237,7 @@ const App = () => {
     <div className="container">
       <Header />
       <div style={RiderCardsStyle}>
-        <div style={RiderCardStyle}>
-          <RiderCards riders={riders}/>
-        </div>
+        <RiderCards riders={riders}/>
       </div>
     </div>
   );
@@ -247,16 +245,9 @@ const App = () => {
 
 const RiderCardsStyle = {
   display: 'grid',
-  gridTemplateColumns: 'auto auto auto',
+  gridTemplateColumns: 'auto auto auto auto',
   backgroundColor: '#2196F3',
   padding: '10px',
-}
-
-const RiderCardStyle = {
-  display: 'block',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  width: '50%'
 }
 
 export default App;
