@@ -10,11 +10,11 @@ const RiderCard = ({rider}) => {
             <div style={RiderModifiers}>
                 <div style={GradientModifiers}>
                     <div>
-                        <img src={flat_symbol} alt="flat symbol"/>
+                        <img src={flat_symbol} alt="flat symbol:"/>
                         {rider.flat}
                     </div>
                     <div>
-                        <img src="../rider_card_images/hill_symbol.jpg" alt="hill symbol"/>
+                        <img src="../rider_card_images/hill_symbol.jpg" alt="hill symbol:"/>
                         {rider.hill}
                     </div>
                     <div>{rider.mountain}</div>
