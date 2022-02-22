@@ -65,39 +65,4 @@ const ConditionModifiers = {
     gridGap: '10px'
 }
 
-// Not sure if needed
-
-// gradient modifiers
-//
-// const flat = {
-//     gridArea: flat,
-// }
-// const hill = {
-//     gridArea: hill,
-// }
-// const mountain = {
-//     gridArea: mountain,
-// }
-// const downhill = {
-//     gridArea: downhill,
-// }
-
-// challange modifiers
-//
-// const sprint = {
-//     gridArea: sprint,
-// }
-// const breakaway = {
-//     gridArea: breakaway,
-// }
-
-// condition modifiers
-//
-// const cobble = {
-//     gridArea: cobble,
-// }
-// const wind = {
-//     gridArea: wind,
-// }
-
 export default RiderCard;
