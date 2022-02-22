@@ -1,3 +1,6 @@
+import flat_symbol from '../rider_card_images/flat_symbol.jpg';
+//import hill_symbol from '../rider_card_images/hill_symbol.jpg';
+
 const RiderCard = ({rider}) => {
   return (
     <>
@@ -6,8 +9,14 @@ const RiderCard = ({rider}) => {
             <div style={RiderNameStyle}>{rider.name}</div>
             <div style={RiderModifiers}>
                 <div style={GradientModifiers}>
-                    <div>{rider.flat}</div>
-                    <div>{rider.hill}</div>
+                    <div>
+                        <img src={flat_symbol} alt="flat symbol"/>
+                        {rider.flat}
+                    </div>
+                    <div>
+                        <img src="../rider_card_images/hill_symbol.jpg" alt="hill symbol"/>
+                        {rider.hill}
+                    </div>
                     <div>{rider.mountain}</div>
                     <div>{rider.downhill}</div>
                 </div>
