@@ -1,15 +1,27 @@
+import React from "react";
 import PropTypes from 'prop-types';
 import Button from './Button';
+import {useNavigate} from 'react-router-dom';
 
 
 const Header = ({title}) => {
+
+  let navigate = useNavigate();
+
   return(
     <header className='header' style={headingStyle}>
-      <h1>{title}</h1>
-      <Button color='purple' text='Team' />
-      <Button color='pink' text='Upcoming Races' />
-      <Button color='brown' text='Results' />
-      <Button color='red' text='Art' />
+      <div>{title}</div>
+      <nav>
+        <Button color='purple' text='Rider Cards' 
+          onClick={() => {navigate("/RiderCardPage")}}
+        />
+        <Button color='pink' text='Bar Chart' 
+          onClick={() => {navigate("/BarChartPage")}}
+        />
+        <Button color='green' text='Grouped Bar Chart' 
+          onClick={() => {navigate("/GroupedBarChartPage")}}
+        />
+      </nav>
     </header>
   )
 }
@@ -23,9 +35,10 @@ Header.propTypes = {
 }
 
 const headingStyle = {
-    color: 'blue',
-    backgroundColor: 'black',
-    textAlign: 'center'
+    color: 'gold',
+    backgroundColor: '#4c00ff',
+    textAlign: 'center',
+    fontSize: '50px'
 }
 
 
