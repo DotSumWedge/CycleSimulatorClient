@@ -236,30 +236,33 @@ function BarChartPage() {
     // ie make a chart for flat, hill, mountain, downhill, ...
     var riderStats = [];
     for (const [key, value] of Object.entries(riders[0])) {
-        console.log(`${key}: ${value}`);
+        //console.log(`${key}: ${value}`);
         riderStats.push(key);
     }
 
   return (
-    <div>
-        {/* {riders.map((rider) => (
-            <Chart riderStat={riderStats[4]} riders={riders}/>
-        ))} */}
+    <div style={barChartStyle}>
+        {riderStats.map((riderStat) => {
+            if(isNaN(riders[0][riderStat]) || riderStat === "id"){
+                console.log("don't create chart")
+                return;
+            }
+            return <Chart key={riderStat} riders={riders} riderStat={riderStat}/>;
+        }
+        )}
 
-        <Chart riderStat={riderStats[4]} riders={riders}/>
-        <Chart riderStat={riderStats[5]} riders={riders}/>
-        {/* <Chart riderStat={riderStats[6]} riders={riders}/>
-        <Chart riderStat={riderStats[7]} riders={riders}/>
-        <Chart riderStat={riderStats[8]} riders={riders}/>
-        <Chart riderStat={riderStats[9]} riders={riders}/>
-        <Chart riderStat={riderStats[10]} riders={riders}/> */}
+        {/* if(isNaN(data[0][riderStat]) || riderStat === "id"){
+			return;
+		} */}
     </div>
-
-
-    // <div>
-    //     <Chart riders={riders}/>
-    // </div>
   )
+}
+
+const barChartStyle = {
+    backgroundColor: 'pink', 
+    color: 'blue',
+    border: '15px solid green',
+    padding: '50px',
 }
 
 export default BarChartPage

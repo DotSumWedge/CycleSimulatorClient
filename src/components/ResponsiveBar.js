@@ -4,8 +4,10 @@ import './ResponsiveBar.css';
 
 const Chart = ({riders, riderStat}) => {
 
+	//Todo: onhover of a rider show the rider card?
 
 	const d3Chart = useRef()
+
 	// Ref for updating dimention 
 	const [dimensions, setDimensions] = useState({
 		width: window.innerWidth,
@@ -40,6 +42,10 @@ const Chart = ({riders, riderStat}) => {
 
 		// console.log(dimensions.width, dimensions.height)
 
+		if(isNaN(data[0][riderStat]) || riderStat === "id"){
+			return;
+		}
+
 		const chartwidth = parseInt(d3.select('#riderBarChart').style('width')) - margin.left - margin.right
 		const chartheight = parseInt(d3.select('#riderBarChart').style('height')) - margin.top - margin.bottom
 
@@ -58,7 +64,7 @@ const Chart = ({riders, riderStat}) => {
 			.attr('transform', 'translate(0,'+ chartheight + ')')
 			.call(d3.axisBottom(x).tickFormat(i=>data[i].name).tickSizeOuter(0))
 
-		const max = d3.max(data, function(d){return d.flat})
+		const max = d3.max(data, function(d){return d[riderStat]})
 
 		// y scale
 		const y = d3.scaleLinear()
@@ -76,8 +82,8 @@ const Chart = ({riders, riderStat}) => {
 			.data(data)
 			.join('rect')
 				.attr('x', (d,i) => x(i))
-				.attr('y', d => y(d.flat))
-				.attr('height', d=>y(0)-y(d.flat))
+				.attr('y', d => y(d[riderStat]))
+				.attr('height', d=>y(0)-y(d[riderStat]))
 				.attr('width', x.bandwidth())
 		
 		svg.append("text")
