@@ -11,7 +11,7 @@ const RiderCard = ({rider}) => {
   return (
     <>
         <div key={rider.id} style={RiderCardStyle}>
-            <div>{rider.image}</div>
+            <div style={RiderImageStyle}>{rider.image}</div>
             <div style={RiderNameStyle}>{rider.name}</div>
             <div style={RiderModifiers}>
                 <div style={GradientModifiers}>
@@ -66,6 +66,12 @@ const RiderCardStyle = {
     border: '15px solid green',
     padding: '50px',
     margin: '20px'
+}
+
+const RiderImageStyle = {
+    width: '450px',
+    height: '450px',
+    border: '5px solid green'
 }
 
 const RiderNameStyle = {
