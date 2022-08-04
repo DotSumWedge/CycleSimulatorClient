@@ -96,10 +96,19 @@ const Chart = ({riders, riderStat}) => {
 	}
 
 	return (
-		<div id='riderBarChart'>
+		<div id='riderBarChart' style={barChartStyle}>
 		  <svg ref={d3Chart}></svg>
 		</div>
 	)
+}
+
+const barChartStyle = {
+    backgroundColor: 'grey', 
+    color: 'blue',
+    border: '15px solid blue',
+    padding: '50px',
+	margin: '15px',
+	width: '1500px'
 }
 
 export default Chart

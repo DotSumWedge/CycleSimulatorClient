@@ -241,7 +241,7 @@ function BarChartPage() {
     }
 
   return (
-    <div style={barChartStyle}>
+    <div style={barChartPageStyle}>
         {riderStats.map((riderStat) => {
             if(isNaN(riders[0][riderStat]) || riderStat === "id"){
                 console.log("don't create chart")
@@ -250,19 +250,15 @@ function BarChartPage() {
             return <Chart key={riderStat} riders={riders} riderStat={riderStat}/>;
         }
         )}
-
-        {/* if(isNaN(data[0][riderStat]) || riderStat === "id"){
-			return;
-		} */}
     </div>
   )
 }
 
-const barChartStyle = {
+const barChartPageStyle = {
     backgroundColor: 'pink', 
-    color: 'blue',
     border: '15px solid green',
     padding: '50px',
+    width: '3439px'
 }
 
 export default BarChartPage
