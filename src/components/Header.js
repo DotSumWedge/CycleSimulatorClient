@@ -9,7 +9,7 @@ const Header = ({title}) => {
   let navigate = useNavigate();
 
   return(
-    <header className='header' style={headingStyle}>
+    <header style={headingStyle}>
       <div>{title}</div>
       <nav>
         <Button color='purple' text='Rider Cards' 
@@ -35,8 +35,8 @@ Header.propTypes = {
 }
 
 const headingStyle = {
-    color: 'gold',
-    backgroundColor: '#4c00ff',
+    color: 'red',
+    backgroundColor: 'gold',
     textAlign: 'center',
     fontSize: '50px'
 }

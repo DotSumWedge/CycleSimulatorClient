@@ -1,9 +1,16 @@
-import React, { useState} from 'react'
+import React, { useState} from 'react';
 import rider_image from '../rider_card_images/Rider_Spear.jpg';
-import RiderCards from '../components/RiderCards'
+import RiderCards from '../components/RiderCards';
+import Button from '../components/Button';
+import BSButton from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 function RiderCardPage() {
 
+  // Todo: Link the state of the riders on this page to
+  // the riders used as input for the bar chart page
+  // Todo: dynamiclly create the race dropdown based on the races in riders
   const [riders, setRiders] = useState ([
     {
         id: 1,
@@ -231,8 +238,55 @@ function RiderCardPage() {
     }
   ])
 
+  const [theme, setTheme] = useState(null);
+
+  const resetTheme = () => {
+    setTheme(null);
+  };
+
   return (
-  <div className="container">
+  <div>
+
+    <div>
+        <Dropdown as={ButtonGroup} size="lg">
+            <BSButton
+            className="text-capitalize"
+            variant={theme ? theme : "secondary"}
+            >
+            {theme ? theme : "Default"}
+            </BSButton>
+            <Dropdown.Toggle
+            split
+            variant={theme ? theme : "secondary"}
+            id="dropdown-split-basic"
+            />
+            <Dropdown.Menu>
+            <Dropdown.Item eventKey="1" onClick={() => setTheme("primary")}>
+                Dwarf
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="2" onClick={() => setTheme("danger")}>
+                Elf
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="3" onClick={() => setTheme("success")}>
+                Human
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="4" onClick={() => setTheme("ork")}>
+                Ork
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item eventKey="4" onClick={resetTheme}>
+                Default Theme
+            </Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    </div>
+
+
+
+    <Button color='orange' text='Submit' 
+        // onClick={() => {}}
+    />
+
     <div style={RiderCardsStyle}>
       <RiderCards riders={riders}/>
     </div>
@@ -244,7 +298,7 @@ const RiderCardsStyle = {
   display: 'grid',
   gridTemplateColumns: 'auto auto auto auto',
   backgroundColor: '#2196F3',
-  padding: '10px',
+  padding: '20px',
 }
 
 export default RiderCardPage

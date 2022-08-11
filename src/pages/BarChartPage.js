@@ -257,8 +257,7 @@ function BarChartPage() {
 const barChartPageStyle = {
     backgroundColor: 'pink', 
     border: '15px solid green',
-    padding: '50px',
-    width: '3439px'
+    padding: '50px'
 }
 
 export default BarChartPage

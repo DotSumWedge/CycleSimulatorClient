@@ -62,6 +62,7 @@ const Chart = ({riders, riderStat}) => {
 
 		svg.append('g')
 			.attr('transform', 'translate(0,'+ chartheight + ')')
+			.style("font-size", "16px")
 			.call(d3.axisBottom(x).tickFormat(i=>data[i].name).tickSizeOuter(0))
 
 		const max = d3.max(data, function(d){return d[riderStat]})
@@ -105,8 +106,8 @@ const Chart = ({riders, riderStat}) => {
 const barChartStyle = {
     backgroundColor: 'grey', 
     color: 'blue',
-    border: '15px solid blue',
-    padding: '50px',
+    border: '7px solid gold',
+    padding: '20px',
 	margin: '15px',
 	width: '1500px'
 }

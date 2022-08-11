@@ -17,11 +17,16 @@ const Button = ({color, text}) => {
         navigate("/GroupedBarChartPage")
       }
   }
+
+  const ButtonStyle = {
+    backgroundColor: color,
+    padding: '10px'
+  }
   
   return (
     <button
       onClick={onClick}
-      style={{backgroundColor: color}} 
+      style={ButtonStyle} 
       className='btn'>
         {text}
     </button>
@@ -37,5 +42,7 @@ Button.propTypes = {
     text: PropTypes.string,
     color: PropTypes.string,
 }
+
+
 
 export default Button

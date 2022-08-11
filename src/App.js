@@ -5,18 +5,14 @@ import BarChartPage from './pages/BarChartPage';
 import GroupedBarChartPage from './pages/GroupedBarChartPage';
 import ErrorPage from './pages/ErrorPage';
 import {Routes, Route, Link} from 'react-router-dom';
+import Alert from 'react-bootstrap/Alert';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 const App = () => {
   return (
-    <div>
-        {/* <nav>   
-            <Link to="/RiderCardPage">II Rider Cards II</Link>
-            <Link to="/BarChartPage">II Bar Chart II</Link>
-            <Link to="/GroupedBarChartPage">II Grouped Bar Chart II</Link>
-        </nav> */}
-
-        <div className="container">
+    <div style={backgroundStyle}>
+        <div>
             <Header />
         </div>
 
@@ -26,8 +22,29 @@ const App = () => {
             <Route path="/GroupedBarChartPage" element={<GroupedBarChartPage />} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
+
+        <>
+          {[
+            'primary',
+            'secondary',
+            'success',
+            'danger',
+            'warning',
+            'info',
+            'light',
+            'dark',
+            ].map((variant) => (
+              <Alert key={variant} variant={variant}>
+                {variant} alert!
+              </Alert>
+            ))}
+        </>
     </div>
   );
+}
+
+const backgroundStyle = {
+  backgroundColor: '#4c00ff'
 }
 
 export default App;
