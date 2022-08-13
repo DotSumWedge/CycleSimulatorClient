@@ -96,10 +96,21 @@
 //     return Object.assign(svg.node(), {scales: {color: zScale}});
 //   }
 
-  function GroupedBarChartPage(){
-    return(
-        <div>Grouped Bar Chart</div>
-    )
-  }
+import Chart from '../components/GroupedBarChart.js';
+import rider_image from '../rider_card_images/Rider_Spear.jpg';
 
-  export default GroupedBarChartPage
+function GroupedBarChartPage(){
+  return(
+      <div style={groupedBarChartPageStyle}>
+        <Chart/>
+      </div>
+  )
+}
+
+const groupedBarChartPageStyle = {
+  backgroundColor: 'pink', 
+  border: '15px solid green',
+  padding: '50px'
+}
+
+export default GroupedBarChartPage
