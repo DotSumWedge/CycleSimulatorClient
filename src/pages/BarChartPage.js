@@ -234,7 +234,7 @@ function BarChartPage() {
     //prints out the key value pairs for the attributes of the first rider in the list of riders
     // trying to figure out how to create a chart for every key that has a numerical value
     // ie make a chart for flat, hill, mountain, downhill, ...
-    var riderStats = [];
+    const riderStats = [];
     for (const [key, value] of Object.entries(riders[0])) {
         //console.log(`${key}: ${value}`);
         riderStats.push(key);

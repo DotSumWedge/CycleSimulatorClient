@@ -6,13 +6,14 @@ const Chart = ({riders, riderStat}) => {
 
 	//Todo: onhover of a rider show the rider card?
 
-	const d3Chart = useRef()
+	const attributeBarChart = useRef()
 
 	// Ref for updating dimention 
 	const [dimensions, setDimensions] = useState({
 		width: window.innerWidth,
 		height: window.innerHeight
 	})
+
 	// Ref for resize event update
 	const update = useRef(false)
 
@@ -28,6 +29,7 @@ const Chart = ({riders, riderStat}) => {
 			// If resize, remove the previous chart
 			if(update.current){
 				d3.selectAll('g').remove()
+				d3.selectAll('text').remove()
 			} else {update.current = true}
 		})
 
@@ -40,8 +42,6 @@ const Chart = ({riders, riderStat}) => {
 
 	function DrawChart(data, dimensions){
 
-		// console.log(dimensions.width, dimensions.height)
-
 		if(isNaN(data[0][riderStat]) || riderStat === "id"){
 			return;
 		}
@@ -49,8 +49,9 @@ const Chart = ({riders, riderStat}) => {
 		const chartwidth = parseInt(d3.select('#riderBarChart').style('width')) - margin.left - margin.right
 		const chartheight = parseInt(d3.select('#riderBarChart').style('height')) - margin.top - margin.bottom
 
+		console.log(chartwidth, chartheight)
 
-		const svg = d3.select(d3Chart.current)
+		const svg = d3.select(attributeBarChart.current)
 						.attr('width', chartwidth + margin.left + margin.right)
 						.attr('height', chartheight + margin.top + margin.bottom)
 
@@ -97,19 +98,19 @@ const Chart = ({riders, riderStat}) => {
 	}
 
 	return (
-		<div id='riderBarChart' style={barChartStyle}>
-		  <svg ref={d3Chart}></svg>
+		<div id='riderBarChart' style={barChartDivStyle}>
+		  <svg ref={attributeBarChart}></svg>
 		</div>
 	)
 }
 
-const barChartStyle = {
+const barChartDivStyle = {
     backgroundColor: 'grey', 
     color: 'blue',
     border: '7px solid gold',
     padding: '20px',
 	margin: '15px',
-	width: '1500px'
+	width: '1700px'
 }
 
 export default Chart
