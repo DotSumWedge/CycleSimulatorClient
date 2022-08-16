@@ -92,7 +92,8 @@ const Chart = ({riders, riderStat}) => {
 			.attr("x", (chartwidth / 2))             
 			.attr("y", (margin.top / 2))
 			.attr("text-anchor", "middle")  
-			.style("font-size", "25px") 
+			.style("font-size", "25px")
+			.style("fill", "#ffffff")
 			.style("text-decoration", "underline")
 			.text("Rider Attribute: " + riderStat);
 	}
@@ -105,9 +106,9 @@ const Chart = ({riders, riderStat}) => {
 }
 
 const barChartDivStyle = {
-    backgroundColor: 'grey', 
-    color: 'blue',
-    border: '7px solid gold',
+    backgroundColor: '#0d1e54', 
+    color: '#ffffff',
+    border: '7px solid #630c01',
     padding: '20px',
 	margin: '15px',
 	width: '1700px'

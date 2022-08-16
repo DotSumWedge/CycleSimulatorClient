@@ -255,8 +255,8 @@ function BarChartPage() {
 }
 
 const barChartPageStyle = {
-    backgroundColor: 'pink', 
-    border: '15px solid green',
+    backgroundColor: '#262623', 
+    border: '15px solid #630c01',
     padding: '50px'
 }
 
