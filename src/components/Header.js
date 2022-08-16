@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 import {useNavigate} from 'react-router-dom';
 
-
 const Header = ({title}) => {
 
   let navigate = useNavigate();
@@ -40,6 +39,5 @@ const headingStyle = {
     textAlign: 'center',
     fontSize: '50px'
 }
-
 
 export default Header

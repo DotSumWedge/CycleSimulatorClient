@@ -8,7 +8,6 @@ import {Routes, Route, Link} from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 const App = () => {
   return (
     <div style={backgroundStyle}>

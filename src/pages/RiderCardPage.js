@@ -246,7 +246,6 @@ function RiderCardPage() {
 
   return (
   <div>
-
     <div>
         <Dropdown as={ButtonGroup} size="lg">
             <BSButton
@@ -280,9 +279,7 @@ function RiderCardPage() {
             </Dropdown.Menu>
         </Dropdown>
     </div>
-
-
-
+    
     <Button color='orange' text='Submit' 
         // onClick={() => {}}
     />
