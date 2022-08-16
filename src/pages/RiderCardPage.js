@@ -297,7 +297,7 @@ function RiderCardPage() {
 const RiderCardsStyle = {
   display: 'grid',
   gridTemplateColumns: 'auto auto auto auto',
-  backgroundColor: '#2196F3',
+  backgroundColor: '#262623',
   padding: '20px',
 }
 

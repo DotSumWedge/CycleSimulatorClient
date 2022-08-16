@@ -59,11 +59,10 @@ const RiderCard = ({rider}) => {
 };
 
 const RiderCardStyle = {
-    backgroundColor: 'yellow', 
-    color: 'red',
+    backgroundColor: '#ded683',
     width: '600px',
     height: '700px',
-    border: '15px solid green',
+    border: '15px solid #630c01',
     padding: '50px',
     margin: '20px'
 }
@@ -72,7 +71,7 @@ const RiderImageStyle = {
     // currently rider cards are 450px by 450px
     width: '460px',
     height: '460px',
-    border: '5px solid green'
+    border: '5px solid #630c01'
 }
 
 const RiderNameStyle = {

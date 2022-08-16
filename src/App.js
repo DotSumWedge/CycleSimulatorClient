@@ -44,7 +44,7 @@ const App = () => {
 }
 
 const backgroundStyle = {
-  backgroundColor: '#4c00ff'
+  backgroundColor: '#000000'
 }
 
 export default App;

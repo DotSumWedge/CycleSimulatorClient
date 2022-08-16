@@ -36,7 +36,7 @@ Header.propTypes = {
 
 const headingStyle = {
     color: 'red',
-    backgroundColor: 'gold',
+    backgroundColor: '#453b01',
     textAlign: 'center',
     fontSize: '50px'
 }
