@@ -11,13 +11,13 @@ const Header = ({title}) => {
     <header style={headingStyle}>
       <div>{title}</div>
       <nav>
-        <Button color='purple' text='Rider Cards' 
+        <Button color='#ffb3c4' text='Rider Cards' 
           onClick={() => {navigate("/RiderCardPage")}}
         />
-        <Button color='pink' text='Bar Chart' 
+        <Button color='#b3e1ff' text='Bar Chart' 
           onClick={() => {navigate("/BarChartPage")}}
         />
-        <Button color='green' text='Grouped Bar Chart' 
+        <Button color='#b3ffe1' text='Grouped Bar Chart' 
           onClick={() => {navigate("/GroupedBarChartPage")}}
         />
       </nav>
