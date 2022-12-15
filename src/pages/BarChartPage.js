@@ -234,15 +234,15 @@ function BarChartPage() {
     //prints out the key value pairs for the attributes of the first rider in the list of riders
     // trying to figure out how to create a chart for every key that has a numerical value
     // ie make a chart for flat, hill, mountain, downhill, ...
-    const riderStats = [];
+    const riderAttributes  = [];
     for (const [key, value] of Object.entries(riders[0])) {
         //console.log(`${key}: ${value}`);
-        riderStats.push(key);
+        riderAttributes.push(key);
     }
 
   return (
     <div style={barChartPageStyle}>
-        {riderStats.map((riderStat) => {
+        {riderAttributes.map((riderStat) => {
             if(isNaN(riders[0][riderStat]) || riderStat === "id"){
                 console.log("don't create chart")
                 return;
