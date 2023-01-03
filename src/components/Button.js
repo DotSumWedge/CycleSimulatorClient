@@ -13,8 +13,11 @@ const Button = ({color, text}) => {
       else if(text === "Bar Chart"){
         navigate("/BarChartPage")
       }
-      else if(text === "Grouped Bar Chart"){
-        navigate("/GroupedBarChartPage")
+      // else if(text === "Grouped Bar Chart"){
+      //   navigate("/GroupedBarChartPage")
+      // }
+      else if(text === "Transition Matrix Graph"){
+        navigate("/TransitionMatrixGraphPage")
       }
   }
 

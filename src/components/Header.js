@@ -20,6 +20,9 @@ const Header = ({title}) => {
         <Button color='#b3ffe1' text='Grouped Bar Chart' 
           onClick={() => {navigate("/GroupedBarChartPage")}}
         />
+        <Button color='#cfb3ff' text='Transition Matrix Graph' 
+          onClick={() => {navigate("/TransitionMatrixGraphPage")}}
+        />
       </nav>
     </header>
   )

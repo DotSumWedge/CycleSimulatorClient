@@ -3,6 +3,7 @@ import Header from './components/Header'
 import RiderCardPage from './pages/RiderCardPage';
 import BarChartPage from './pages/BarChartPage';
 import GroupedBarChartPage from './pages/GroupedBarChartPage';
+import TransitionMatrixGraphPage from './pages/TransitionMatrixGraphPage';
 import ErrorPage from './pages/ErrorPage';
 import {Routes, Route, Link} from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/RiderCardPage" element={<RiderCardPage />} />
             <Route path="/BarChartPage" element={<BarChartPage />} />
             <Route path="/GroupedBarChartPage" element={<GroupedBarChartPage />} />
+            <Route path="/TransitionMatrixGraphPage" element={<TransitionMatrixGraphPage />} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
 
