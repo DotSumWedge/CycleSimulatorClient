@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import Graph from '../components/TransitionMatrixGraph';
 
 function TransitionMatrixGraphPage(){
     return(
         <div style={TransitionMatrixGraphPageStyle}>
-            <p>Nodes and Edges</p>
+            <Graph></Graph>
         </div>
     )
 }
