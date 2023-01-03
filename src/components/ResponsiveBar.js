@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import {select} from "d3"
+import {select} from "d3";
 import './ResponsiveBar.css';
 
 //https://www.tutorialsteacher.com/d3js/animated-bar-chart-d3
