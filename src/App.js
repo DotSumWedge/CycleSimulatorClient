@@ -10,6 +10,9 @@ import Alert from 'react-bootstrap/Alert';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
+
+  document.body.style.background = '#212529';
+  
   return (
     <div style={backgroundStyle}>
         <div>
