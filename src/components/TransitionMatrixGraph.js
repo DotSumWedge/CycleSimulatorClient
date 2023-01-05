@@ -43,11 +43,12 @@ const TransitionMatrixGraph = ({}) => {
 		if(!dimensions){
 			return;
 		}
-        
+
         const chartwidth = dimensions.width;
         const chartheight = dimensions.height - margin.top - margin.bottom;
 
         console.log("------------")
+        console.log(dimensions)
 		console.log(chartwidth)
         console.log(chartheight)
 
@@ -57,7 +58,19 @@ const TransitionMatrixGraph = ({}) => {
 
         svg.append('circle')
             .attr('cx', '50%')
-            .attr('cy', '50%')
+            .attr('cy', '25%')
+            .attr('r', 20)
+            .style('fill', 'green');
+
+        svg.append('circle')
+            .attr('cx', '25%')
+            .attr('cy', '75%')
+            .attr('r', 20)
+            .style('fill', 'green');
+
+        svg.append('circle')
+            .attr('cx', '75%')
+            .attr('cy', '75%')
             .attr('r', 20)
             .style('fill', 'green');
     }
