@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
 
-  document.body.style.background = '#212529';
+  document.body.style.background = '#440269';
   
   return (
     <div style={backgroundStyle}>
@@ -48,7 +48,7 @@ const App = () => {
 }
 
 const backgroundStyle = {
-  backgroundColor: '#000000'
+  backgroundColor: '#440269'
 }
 
 export default App;

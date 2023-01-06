@@ -10,9 +10,9 @@ function TransitionMatrixGraphPage(){
 }
 
 const TransitionMatrixGraphPageStyle = {
-    color: 'red',
+    color: '#3F8C00',
     backgroundColor: '#262623', 
-    border: '15px solid #630c01',
+    border: '15px solid #9D9D00',
     padding: '50px'
 }
 

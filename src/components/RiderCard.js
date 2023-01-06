@@ -59,10 +59,10 @@ const RiderCard = ({rider}) => {
 };
 
 const RiderCardStyle = {
-    backgroundColor: '#ded683',
+    backgroundColor: '#9D9D00',
     width: '600px',
     height: '700px',
-    border: '15px solid #630c01',
+    border: '15px solid #8C002B',
     padding: '50px',
     margin: '20px'
 }
@@ -71,18 +71,18 @@ const RiderImageStyle = {
     // currently rider cards are 450px by 450px
     width: '460px',
     height: '460px',
-    border: '5px solid #630c01'
+    border: '5px solid #7A06B9'
 }
 
 const RiderNameStyle = {
     textAlign: 'center',
-    color: 'blue',
+    color: '#7A06B9',
     fontSize: '30px'
 }
 
 const RiderModifiers = {
     textAlign: 'center',
-    color: 'red',
+    color: '#CA003D',
     fontSize: '20px'
 }
 

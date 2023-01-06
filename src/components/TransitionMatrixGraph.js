@@ -60,19 +60,19 @@ const TransitionMatrixGraph = ({}) => {
             .attr('cx', '50%')
             .attr('cy', '25%')
             .attr('r', 20)
-            .style('fill', 'green');
+            .style('fill', '#74EC11');
 
         svg.append('circle')
             .attr('cx', '25%')
             .attr('cy', '75%')
             .attr('r', 20)
-            .style('fill', 'green');
+            .style('fill', '#74EC11');
 
         svg.append('circle')
             .attr('cx', '75%')
             .attr('cy', '75%')
             .attr('r', 20)
-            .style('fill', 'green');
+            .style('fill', '#74EC11');
     }
 
 	return (
@@ -84,9 +84,8 @@ const TransitionMatrixGraph = ({}) => {
 }
 
 const transitionGraphDivStyle = {
-    backgroundColor: '#0d1e54', 
-    color: '#ffffff',
-    border: '7px solid #630c01',
+    backgroundColor: '#3F8C00', 
+    border: '7px solid #8C002B',
     padding: '20px',
 	margin: '15px',
 	width: '100%'

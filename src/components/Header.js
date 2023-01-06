@@ -11,16 +11,16 @@ const Header = ({title}) => {
     <header style={headingStyle}>
       <div>{title}</div>
       <nav>
-        <Button color='#ffb3c4' text='Rider Cards' 
+        <Button color='#8718C5' text='Rider Cards' 
           onClick={() => {navigate("/RiderCardPage")}}
         />
-        <Button color='#b3e1ff' text='Bar Chart' 
+        <Button color='#EC1153' text='Bar Chart' 
           onClick={() => {navigate("/BarChartPage")}}
         />
-        <Button color='#b3ffe1' text='Grouped Bar Chart' 
+        <Button color='#5BCA00' text='Grouped Bar Chart' 
           onClick={() => {navigate("/GroupedBarChartPage")}}
         />
-        <Button color='#cfb3ff' text='Transition Matrix Graph' 
+        <Button color='#9D9D00' text='Transition Matrix Graph' 
           onClick={() => {navigate("/TransitionMatrixGraphPage")}}
         />
       </nav>
@@ -37,8 +37,8 @@ Header.propTypes = {
 }
 
 const headingStyle = {
-    color: 'red',
-    backgroundColor: '#453b01',
+    color: '#FFFF00',
+    backgroundColor: '#262623',
     textAlign: 'center',
     fontSize: '50px'
 }

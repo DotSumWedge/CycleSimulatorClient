@@ -68,9 +68,9 @@ const Chart = ({riders, riderStat}) => {
 
 		console.log("------------")
 		console.log(dimensions)
-		console.log(data)
-		console.log(riderStat)
-		console.log(data[0][riderStat])
+		// console.log(data)
+		// console.log(riderStat)
+		// console.log(data[0][riderStat])
 
 		const chartwidth = dimensions.width;
 		const chartheight = dimensions.height - margin.top - margin.bottom;
@@ -107,7 +107,7 @@ const Chart = ({riders, riderStat}) => {
 
 		// Draw bars
 		svg.append('g')
-			.attr('fill','#65f0eb')
+			.attr('fill','#5BCA00')
 			.selectAll('rect')
 			.data(data)
 			.join('rect')
@@ -121,7 +121,7 @@ const Chart = ({riders, riderStat}) => {
 			.attr("y", (margin.top / 2))
 			.attr("text-anchor", "middle")  
 			.style("font-size", "25px")
-			.style("fill", "#ffffff")
+			.style("fill", "#FFFF12")
 			.style("text-decoration", "underline")
 			.text("Rider Attribute: " + riderStat);
 	}
@@ -134,9 +134,9 @@ const Chart = ({riders, riderStat}) => {
 }
 
 const barChartDivStyle = {
-    backgroundColor: '#0d1e54', 
-    color: '#ffffff',
-    border: '7px solid #630c01',
+    backgroundColor: '#3F8C00', 
+    color: '#FFFF12',
+    border: '7px solid #8C002B',
     padding: '20px',
 	margin: '15px',
 	width: '100%'

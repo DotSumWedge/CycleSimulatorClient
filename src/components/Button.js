@@ -23,6 +23,7 @@ const Button = ({color, text}) => {
 
   const ButtonStyle = {
     backgroundColor: color,
+    color: '#FFFFFF',
     padding: '10px'
   }
   
@@ -37,8 +38,7 @@ const Button = ({color, text}) => {
 }
 
 Button.defaultProps = {
-  color: 'steelblue'
-
+  color: '#EC1153'
 }
 
 Button.propTypes = {

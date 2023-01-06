@@ -1,116 +1,259 @@
-// import {GroupedBarChart} from "@d3/grouped-bar-chart"
-// https://observablehq.com/@d3/grouped-bar-chart
-// function GroupedBarChart(data, {
-//     x = (d, i) => i, // given d in data, returns the (ordinal) x-value
-//     y = d => d, // given d in data, returns the (quantitative) y-value
-//     z = () => 1, // given d in data, returns the (categorical) z-value
-//     title, // given d in data, returns the title text
-//     marginTop = 30, // top margin, in pixels
-//     marginRight = 0, // right margin, in pixels
-//     marginBottom = 30, // bottom margin, in pixels
-//     marginLeft = 40, // left margin, in pixels
-//     width = 640, // outer width, in pixels
-//     height = 400, // outer height, in pixels
-//     xDomain, // array of x-values
-//     xRange = [marginLeft, width - marginRight], // [xmin, xmax]
-//     xPadding = 0.1, // amount of x-range to reserve to separate groups
-//     yType = d3.scaleLinear, // type of y-scale
-//     yDomain, // [ymin, ymax]
-//     yRange = [height - marginBottom, marginTop], // [ymin, ymax]
-//     zDomain, // array of z-values
-//     zPadding = 0.05, // amount of x-range to reserve to separate bars
-//     yFormat, // a format specifier string for the y-axis
-//     yLabel, // a label for the y-axis
-//     colors = d3.schemeTableau10, // array of colors
-//   } = {}) {
-//     // Compute values.
-//     const X = d3.map(data, x);
-//     const Y = d3.map(data, y);
-//     const Z = d3.map(data, z);
-  
-//     // Compute default domains, and unique the x- and z-domains.
-//     if (xDomain === undefined) xDomain = X;
-//     if (yDomain === undefined) yDomain = [0, d3.max(Y)];
-//     if (zDomain === undefined) zDomain = Z;
-//     xDomain = new d3.InternSet(xDomain);
-//     zDomain = new d3.InternSet(zDomain);
-  
-//     // Omit any data not present in both the x- and z-domain.
-//     const I = d3.range(X.length).filter(i => xDomain.has(X[i]) && zDomain.has(Z[i]));
-  
-//     // Construct scales, axes, and formats.
-//     const xScale = d3.scaleBand(xDomain, xRange).paddingInner(xPadding);
-//     const xzScale = d3.scaleBand(zDomain, [0, xScale.bandwidth()]).padding(zPadding);
-//     const yScale = yType(yDomain, yRange);
-//     const zScale = d3.scaleOrdinal(zDomain, colors);
-//     const xAxis = d3.axisBottom(xScale).tickSizeOuter(0);
-//     const yAxis = d3.axisLeft(yScale).ticks(height / 60, yFormat);
-  
-//     // Compute titles.
-//     if (title === undefined) {
-//       const formatValue = yScale.tickFormat(100, yFormat);
-//       title = i => `${X[i]}\n${Z[i]}\n${formatValue(Y[i])}`;
-//     } else {
-//       const O = d3.map(data, d => d);
-//       const T = title;
-//       title = i => T(O[i], i, data);
-//     }
-  
-//     const svg = d3.create("svg")
-//         .attr("width", width)
-//         .attr("height", height)
-//         .attr("viewBox", [0, 0, width, height])
-//         .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
-  
-//     svg.append("g")
-//         .attr("transform", `translate(${marginLeft},0)`)
-//         .call(yAxis)
-//         .call(g => g.select(".domain").remove())
-//         .call(g => g.selectAll(".tick line").clone()
-//             .attr("x2", width - marginLeft - marginRight)
-//             .attr("stroke-opacity", 0.1))
-//         .call(g => g.append("text")
-//             .attr("x", -marginLeft)
-//             .attr("y", 10)
-//             .attr("fill", "currentColor")
-//             .attr("text-anchor", "start")
-//             .text(yLabel));
-  
-//     const bar = svg.append("g")
-//       .selectAll("rect")
-//       .data(I)
-//       .join("rect")
-//         .attr("x", i => xScale(X[i]) + xzScale(Z[i]))
-//         .attr("y", i => yScale(Y[i]))
-//         .attr("width", xzScale.bandwidth())
-//         .attr("height", i => yScale(0) - yScale(Y[i]))
-//         .attr("fill", i => zScale(Z[i]));
-  
-//     if (title) bar.append("title")
-//         .text(title);
-  
-//     svg.append("g")
-//         .attr("transform", `translate(0,${height - marginBottom})`)
-//         .call(xAxis);
-  
-//     return Object.assign(svg.node(), {scales: {color: zScale}});
-//   }
-
+import React, { useState } from 'react'
 import Chart from '../components/GroupedBarChart.js';
 import rider_image from '../rider_card_images/Rider_Spear.jpg';
 
 function GroupedBarChartPage(){
+
+  const [riders, setRiders] = useState ([
+    {
+        id: 1,
+        name: "Sprimli",
+        race: "Dwarf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 13,
+        hill: 7,
+        mountain: 0,
+        downhill: 3,
+        sprint: 25,
+        breakaway: 9,
+        cobbleStone: 11,
+        wind: 14
+    },
+    {
+        id: 2,
+        name: "Hofbrow",
+        race: "Dwarf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 12,
+        hill: 17,
+        mountain: 10,
+        downhill: 7,
+        sprint: 18,
+        breakaway: 8,
+        cobbleStone: 3,
+        wind: 13
+    },
+    {
+        id: 3,
+        name: "Ultstone",
+        race: "Dwarf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 10,
+        hill: 11,
+        mountain: 12,
+        downhill: 4,
+        sprint: 15,
+        breakaway: 11,
+        cobbleStone: 17,
+        wind: 9
+    },
+    {
+        id: 4,
+        name: "Windorf",
+        race: "Dwarf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 14,
+        hill: 10,
+        mountain: 4,
+        downhill: 6,
+        sprint: 14,
+        breakaway: 16,
+        cobbleStone: 5,
+        wind: 17
+    },
+    {
+        id: 5,
+        name: "Florfindailyan",
+        race: "Elf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 17,
+        hill: 7,
+        mountain: 3,
+        downhill: 3,
+        sprint: 16,
+        breakaway: 17,
+        cobbleStone: 12,
+        wind: 13
+    },
+    {
+        id: 6,
+        name: "Imin",
+        race: "Elf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 7,
+        hill: 11,
+        mountain: 12,
+        downhill: 12,
+        sprint: 12,
+        breakaway: 15,
+        cobbleStone: 10,
+        wind: 15
+    },
+    {
+        id: 7,
+        name: "Tata",
+        race: "Elf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 8,
+        hill: 10,
+        mountain: 17,
+        downhill: 5,
+        sprint: 12,
+        breakaway: 15,
+        cobbleStone: 6,
+        wind: 5
+    },
+    {
+        id: 8,
+        name: "Enel",
+        race: "Elf",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 10,
+        hill: 15,
+        mountain: 15,
+        downhill: 10,
+        sprint: 14,
+        breakaway: 10,
+        cobbleStone: 6,
+        wind: 8
+    },
+    {
+        id: 9,
+        name: "Joe",
+        race: "Human",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 13,
+        hill: 12,
+        mountain: 12,
+        downhill: 12,
+        sprint: 12,
+        breakaway: 11,
+        cobbleStone: 11,
+        wind: 11
+    },
+    {
+        id: 10,
+        name: "George",
+        race: "Human",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 10,
+        hill: 14,
+        mountain: 11,
+        downhill: 14,
+        sprint: 15,
+        breakaway: 6,
+        cobbleStone: 10,
+        wind: 10
+    },
+    {
+        id: 11,
+        name: "Vander",
+        race: "Human",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 15,
+        hill: 10,
+        mountain: 4,
+        downhill: 4,
+        sprint: 20,
+        breakaway: 12,
+        cobbleStone: 15,
+        wind: 10
+    },
+    {
+        id: 12,
+        name: "Spear",
+        race: "Human",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 11,
+        hill: 12,
+        mountain: 16,
+        downhill: 10,
+        sprint: 12,
+        breakaway: 8,
+        cobbleStone: 8,
+        wind: 9
+    },
+    {
+        id: 13,
+        name: "Grazar",
+        race: "Ork",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 15,
+        hill: 10,
+        mountain: 5,
+        downhill: 15,
+        sprint: 14,
+        breakaway: 4,
+        cobbleStone: 18,
+        wind: 9
+    },
+    {
+        id: 14,
+        name: "Gork",
+        race: "Ork",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 10,
+        hill: 10,
+        mountain: 10,
+        downhill: 17,
+        sprint: 10,
+        breakaway: 14,
+        cobbleStone: 13,
+        wind: 8
+    },
+    {
+        id: 15,
+        name: "Mork",
+        race: "Ork",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 12,
+        hill: 15,
+        mountain: 7,
+        downhill: 18,
+        sprint: 7,
+        breakaway: 7,
+        cobbleStone: 15,
+        wind: 11
+    },
+    {
+        id: 16,
+        name: "Speed Dok",
+        race: "Ork",
+        image: <img src={rider_image} alt="Portrait of rider"/>,
+        flat: 8,
+        hill: 11,
+        mountain: 13,
+        downhill: 21,
+        sprint: 8,
+        breakaway: 5,
+        cobbleStone: 14,
+        wind: 8
+    }
+  ])
+
+  const riderStats = [];
+  for (const [key, value] of Object.entries(riders[0])) {
+      riderStats.push(key);
+  }
+
   return(
       <div style={groupedBarChartPageStyle}>
-        <Chart/>
+        {riderStats.map((riderStat) => {
+            if(isNaN(riders[0][riderStat]) || riderStat === "id"){
+                console.log("don't create chart")
+                return;
+            }
+            return <Chart key={riderStat} riders={riders} riderStat={riderStat}/>;
+          }
+        )}
       </div>
   )
 }
 
 const groupedBarChartPageStyle = {
-  backgroundColor: 'pink', 
-  border: '15px solid green',
-  padding: '50px'
+  backgroundColor: '#8C002B', 
+  border: '15px solid #3F8C00',
+  padding: '25px'
 }
 
 export default GroupedBarChartPage
